@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -12,6 +12,10 @@
     <ProjectReference Include="..\..\Common\WebStore.Domain\WebStore.Domain.csproj" />
     <ProjectReference Include="..\WebStore.DAL\WebStore.DAL.csproj" />
     <ProjectReference Include="..\WebStore.Interfaces\WebStore.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapping\" />
   </ItemGroup>
 
 </Project>

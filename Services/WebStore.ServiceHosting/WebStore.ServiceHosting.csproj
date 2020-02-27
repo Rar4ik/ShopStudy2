@@ -12,13 +12,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\WebStore.Domain\WebStore.Domain.csproj" />
-    <ProjectReference Include="..\..\UI\WebStore\WebStore.csproj" />
-    <ProjectReference Include="..\WebStore.Clients\WebStore.Clients.csproj" />
     <ProjectReference Include="..\WebStore.DAL\WebStore.DAL.csproj" />
     <ProjectReference Include="..\WebStore.Interfaces\WebStore.Interfaces.csproj" />
     <ProjectReference Include="..\WebStore.Services\WebStore.Services.csproj" />
