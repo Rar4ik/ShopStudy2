@@ -9,6 +9,7 @@ using WebStore.Interfaces.Services;
 
 namespace WebStore.Services.Product
 {
+    //
     public class SqlProductData : IProductData
     {
         private readonly WebStoreContext _db;
