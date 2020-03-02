@@ -10,12 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebStore.DAL.Context;
 using WebStore.DAL.Data;
 using WebStore.Domain.Entities.Identity;
 using WebStore.Interfaces.Api;
 using WebStore.Interfaces.Services;
+using WebStore.Logger;
 using WebStore.Services.Product;
 
 namespace WebStore.ServiceHosting
@@ -57,8 +59,10 @@ namespace WebStore.ServiceHosting
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, WebStoreContextInitializer dbInitializer)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, WebStoreContextInitializer dbInitializer, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddLog4Net();
             dbInitializer.InitializeAsync().Wait();
 
             if (env.IsDevelopment())
