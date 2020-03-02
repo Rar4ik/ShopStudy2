@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebStore.ServiceHosting</name>
+    </assembly>
+    <members>
+        <member name="M:WebStore.ServiceHosting.Controllers.ProductsApiController.GetSections">
+            <summary>Получение всех разделов каталога товаров</summary>
+            <returns>Перечисление всех разделов каталога</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.ProductsApiController.GetBrands">
+            <summary>Получение всех брендов товаров из каталога</summary>
+            <returns>Перечисление брендов товаров каталога</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.ProductsApiController.GetProducts(WebStore.Domain.Entities.ProductFilter)">
+            <summary>Получение товаров, удовлетворяющих критерию поиска</summary>
+            <param name="Filter">Фильтр - критерий поиска товаров в каталоге</param>
+            <returns>Перечисление всех товаров из каталога, удовлетворяющих критерию поиска</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.ProductsApiController.GetProductById(System.Int32)">
+            <summary>Получение информации по товару, заданному идентификатором</summary>
+            <param name="id">Идентификатор товара, информацию по которому требуется получить</param>
+            <returns>Информацию по товару, заданному идентификатором</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetUserIdAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets User's Id
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>User's Id</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetUserNameAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets User's Name
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>User's Name</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.SetUserNameAsync(WebStore.Domain.Entities.Identity.User,System.String,Microsoft.Extensions.Logging.ILogger{WebStore.ServiceHosting.Controllers.UsersApiController})">
+            <summary>
+            Sets user's name 
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <param name="name">Name that will be set</param>
+            <param name="Logger">Logs name changes </param>
+            <returns>A user with new name</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetNormalizedUserNameAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets user's name in upper case 
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>A name with capital letters</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.SetNormalizedUserNameAsync(WebStore.Domain.Entities.Identity.User,System.String)">
+            <summary>
+            Sets user's name in upper case
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <param name="name">A name which will be set</param>
+            <returns>A name with capital letters</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.CreateAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Create a User
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>Creation status</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.UpdateAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Update user's information
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>Status of update</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.DeleteAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Delete user's information
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>Status of delete</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.FindByIdAsync(System.String)">
+            <summary>
+            Gets a user by his Id
+            </summary>
+            <param name="id">Id of a user</param>
+            <returns>User object</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.FindByNameAsync(System.String)">
+            <summary>
+            Gets a user by his Name
+            </summary>
+            <param name="name">Name of a user</param>
+            <returns>User object</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.AddToRoleAsync(WebStore.Domain.Entities.Identity.User,System.String,WebStore.DAL.Context.WebStoreContext)">
+            <summary>
+            Adds a user to a role
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <param name="role">Object Role which will be implied</param>
+            <param name="db">Object of Database Context with FromService attribute</param>
+            <returns>Saves a user to a new role into Database Context</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.RemoveFromRoleAsync(WebStore.Domain.Entities.Identity.User,System.String,WebStore.DAL.Context.WebStoreContext)">
+            <summary>
+            Deletes a user from a role group
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <param name="role">Object Role which will be deleted</param>
+            <param name="db">Object of Database Context with FromService attribute</param>
+            <returns>Deletes a user from the role group in Database Context</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetRolesAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets user's role
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>A role of a user</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.IsInRoleAsync(WebStore.Domain.Entities.Identity.User,System.String)">
+            <summary>
+            Checks whether a user is in a role 
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <param name="role">Role's name</param>
+            <returns>Bool status of containing a user in role group</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetUsersInRoleAsync(System.String)">
+            <summary>
+            Gets all users of the role 
+            </summary>
+            <param name="role">Role's name</param>
+            <returns>List of the users which are in the role</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetPasswordHashAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets password Hash
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>String Password Hash</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.SetPasswordHashAsync(WebStore.Domain.Dto.Identity.PasswordHashDTO)">
+            <summary>
+            Sets password Hash
+            </summary>
+            <param name="hash">Object Hash required with FromBody attribute</param>
+            <returns>Sets Password Hash in Hash object</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.HasPasswordAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Checks whether a user has a password
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns>Bool user's password</returns>
+        </member>
+        <member name="M:WebStore.ServiceHosting.Controllers.UsersApiController.GetClaimsAsync(WebStore.Domain.Entities.Identity.User)">
+            <summary>
+            Gets Claims from User object
+            </summary>
+            <param name="user">Object User required with FromBody attribute</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
