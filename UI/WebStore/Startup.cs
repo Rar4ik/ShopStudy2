@@ -47,6 +47,7 @@ namespace WebStore
             services.AddScoped<IProductData, ProductClient>();
             //services.AddScoped<IProductData, InMemoryProductData>();
             services.AddScoped<ICartService, CookieCartService>();
+            services.AddScoped<ICartStore, CookiesCartStore>();
             //services.AddScoped<IOrderService, SqlOrderService>();
             services.AddScoped<IOrderService, OrdersClient>();
             services.AddScoped<IValueService, ValuesClient>();

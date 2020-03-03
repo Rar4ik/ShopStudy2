@@ -12,7 +12,7 @@ namespace WebStore.Logger
             if (!Path.IsPathRooted(ConfigurationFile))
             {
                 var assembly = Assembly.GetEntryAssembly()
-                               ?? throw new InvalidOperationException("не удалось определитьсборку с точкой входа");
+                               ?? throw new InvalidOperationException("не удалось определить сборку с точкой входа");
                 var dir = Path.GetDirectoryName(assembly.Location)
                           ?? throw new InvalidOperationException("не удалось опрежедить каталог исполнительного файла");
                 ConfigurationFile = Path.Combine(dir, ConfigurationFile);
