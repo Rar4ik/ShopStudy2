@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.Interfaces", "Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.Services", "Services\WebStore.Services\WebStore.Services.csproj", "{851FB299-FC24-4D54-BBED-D5FC51E4EBE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore.ServiceHosting", "Services\WebStore.ServiceHosting\WebStore.ServiceHosting.csproj", "{3EBB8C1A-6640-4F40-A457-DF56F2B34782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.ServiceHosting", "Services\WebStore.ServiceHosting\WebStore.ServiceHosting.csproj", "{3EBB8C1A-6640-4F40-A457-DF56F2B34782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore.Clients", "Services\WebStore.Clients\WebStore.Clients.csproj", "{A3D84E81-3808-4020-AA88-91AA6ED3230C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.Clients", "Services\WebStore.Clients\WebStore.Clients.csproj", "{A3D84E81-3808-4020-AA88-91AA6ED3230C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore.Logger", "Common\WebStore.Logger\WebStore.Logger.csproj", "{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A3D84E81-3808-4020-AA88-91AA6ED3230C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D84E81-3808-4020-AA88-91AA6ED3230C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D84E81-3808-4020-AA88-91AA6ED3230C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{851FB299-FC24-4D54-BBED-D5FC51E4EBE4} = {AED7DD00-121B-48B7-B54A-4FD937D33E78}
 		{3EBB8C1A-6640-4F40-A457-DF56F2B34782} = {AED7DD00-121B-48B7-B54A-4FD937D33E78}
 		{A3D84E81-3808-4020-AA88-91AA6ED3230C} = {AED7DD00-121B-48B7-B54A-4FD937D33E78}
+		{6F8D9B21-0FBC-45FA-B144-9AEF0FAF7CAC} = {1A42DD66-53EA-4797-B997-F533D1D36B23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A6C9DB8-DE38-4174-9E92-AA00B4FD34ED}

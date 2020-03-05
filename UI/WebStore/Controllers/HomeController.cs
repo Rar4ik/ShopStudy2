@@ -1,10 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace WebStore.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index() => View();
+        private readonly ILogger<HomeController> _Logger;
+
+        public HomeController(ILogger<HomeController> Logger)
+        {
+            _Logger = Logger;
+        }
+        public IActionResult Index()
+        {
+            _Logger.LogInformation("Запрос главной страницы");
+            return View();
+        }
+
         public IActionResult Blog() => View();
         public IActionResult BlogSingle() => View();
         public IActionResult Cart() => View();

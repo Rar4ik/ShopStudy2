@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using log4net.Repository.Hierarchy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -17,6 +18,8 @@ using WebStore.Interfaces.Services;
 using WebStore.Services.Product;
 using WebStore.Clients.Values;
 using WebStore.Infrastructure.AutoMapper;
+using WebStore.Logger;
+using ILoggerFactory = Microsoft.Extensions.Logging.ILoggerFactory;
 
 namespace WebStore
 {
@@ -102,9 +105,9 @@ namespace WebStore
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env/*, WebStoreContextInitializer db*/)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //db.InitializeAsync().Wait();
+            loggerFactory.AddLog4Net();
 
             if (env.IsDevelopment())
             {
