@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<string>
 @{
     ViewData["Title"] = "Values";
-
+    Layout = "_LayoutBase";
 }
 
+<div class="container">
 <h1>@ViewData["Title"]</h1>
-
-<ul>
-    @foreach (var value in Model)
-    {
-        <li>@value</li>
-    }
-</ul>
+    <ul>
+        @foreach (var value in Model)
+        {
+            <li>@value</li>
+        }
+    </ul>
+</div>

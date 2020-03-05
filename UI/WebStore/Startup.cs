@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebStore.Clients.Employees;
+using WebStore.Clients.Orders;
+using WebStore.Clients.Products;
 using WebStore.DAL.Context;
 using WebStore.Data;
 using WebStore.Domain.Entities.Identity;
@@ -27,11 +30,14 @@ namespace WebStore
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<WebStoreContextInitializer>();
 
-            services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
-            services.AddScoped<IProductData, SqlProductData>();
+            //services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
+            services.AddSingleton<IEmployeesData, EmployeesClient>();
+            //services.AddScoped<IProductData, SqlProductData>();
+            services.AddScoped<IProductData, ProductClient>();
             //services.AddScoped<IProductData, InMemoryProductData>();
             services.AddScoped<ICartService, CookieCartService>();
-            services.AddScoped<IOrderService, SqlOrderService>();
+            //services.AddScoped<IOrderService, SqlOrderService>();
+            services.AddScoped<IOrderService, OrdersClient>();
             services.AddScoped<IValueService, ValuesClient>();
 
             services.AddIdentity<User, Role>()
