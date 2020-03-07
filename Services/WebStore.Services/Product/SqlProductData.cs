@@ -6,6 +6,7 @@ using WebStore.Domain.Dto;
 using WebStore.Domain.Dto.Products;
 using WebStore.Domain.Entities;
 using WebStore.Interfaces.Services;
+using WebStore.Services.Mapping;
 
 namespace WebStore.Services.Product
 {
@@ -20,9 +21,13 @@ namespace WebStore.Services.Product
            //.Include(section => section.Products)
            .AsEnumerable();
 
+        public SectionDto GetSectionById(int id) => _db.Sections.Find(id).ToDTO();
+
         public IEnumerable<Brand> GetBrands() => _db.Brands
            //.Include(brand => brand.Products)
            .AsEnumerable();
+
+        public BrandDto GetBrandById(int id) => _db.Brands.Find(id).ToDTO();
 
         public IEnumerable<ProductDto> GetProducts(ProductFilter Filter = null)
         {
