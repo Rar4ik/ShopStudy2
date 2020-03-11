@@ -7,9 +7,13 @@ namespace WebStore.Interfaces.Services
 {
     public interface IProductData
     {
-        IEnumerable<Section> GetSections();
+        IEnumerable<SectionDto> GetSections();
 
-        IEnumerable<Brand> GetBrands();
+        SectionDto GetSectionById(int id);
+
+        IEnumerable<BrandDto> GetBrands();
+
+        BrandDto GetBrandById(int id);
 
         IEnumerable<ProductDto> GetProducts(ProductFilter Filter = null);
 

@@ -1,0 +1,43 @@
+﻿@using WebStore.Domain.ViewModels.BreadCrumbs
+@model IEnumerable<BreadCrumbsViewModel>
+
+<div class="breadcrumbs">
+    <ol class="breadcrumb">
+        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-controller="Catalog" asp-action="Shop">Shop</a></li>
+
+        @foreach (var item in Model)
+        {
+            switch (item.BreadCrumbType)
+            {
+                default: throw new ArgumentOutOfRangeException();
+
+                case BreadCrumbsType.None: break;
+
+                case BreadCrumbsType.Section:
+                    <li class="active">
+                        <a asp-controller="Catalog"
+                           asp-action="Shop"
+                           asp-route-SectionId="@item.Id">
+                            @item.Name
+                        </a>
+                    </li>
+                    break;
+
+                case BreadCrumbsType.Brand:
+                    <li class="active">
+                        <a asp-controller="Catalog"
+                           asp-action="Shop"
+                           asp-route-BrandId="@item.Id">
+                            @item.Name
+                        </a>
+                    </li>
+                    break;
+
+                case BreadCrumbsType.Product:
+                    <li class="active">@item.Name</li>
+                    break;
+            }
+        }
+    </ol>
+</div>

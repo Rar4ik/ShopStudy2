@@ -13,5 +13,6 @@ namespace WebStore.Domain.Dto.Products
         public BrandDto Brand { get; set; }
         public SectionDto Section { get; set; }
 
+
     }
 }
