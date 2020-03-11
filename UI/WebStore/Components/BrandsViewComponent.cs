@@ -22,14 +22,15 @@ namespace WebStore.Components
 
         private IEnumerable<BrandViewModel> GetBrands() => _ProductData
            .GetBrands()
+           .Where(brand=> brand.ProductCount > 0)
            .Select(brand => new BrandViewModel
             {
                 Id = brand.Id,
                 Name = brand.Name,
-                Order = brand.Order
+                Order = brand.Order,
+                ProductCount = brand.ProductCount
             })
-           .OrderBy(brand => brand.Order)
-           .ToList();
+           .OrderBy(brand => brand.Order);
 
     }
 }

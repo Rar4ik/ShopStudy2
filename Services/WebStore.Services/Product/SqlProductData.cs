@@ -17,15 +17,11 @@ namespace WebStore.Services.Product
 
         public SqlProductData(WebStoreContext db) => _db = db;
 
-        public IEnumerable<Section> GetSections() => _db.Sections
-           //.Include(section => section.Products)
-           .AsEnumerable();
+        public IEnumerable<SectionDto> GetSections() => _db.Sections.TODTO().AsEnumerable();
 
         public SectionDto GetSectionById(int id) => _db.Sections.Find(id).ToDTO();
 
-        public IEnumerable<Brand> GetBrands() => _db.Brands
-           //.Include(brand => brand.Products)
-           .AsEnumerable();
+        public IEnumerable<BrandDto> GetBrands() => _db.Brands.TODTO().AsEnumerable();
 
         public BrandDto GetBrandById(int id) => _db.Brands.Find(id).ToDTO();
 
@@ -39,30 +35,10 @@ namespace WebStore.Services.Product
             if (Filter?.SectionId != null)
                 query = query.Where(product => product.SectionId == Filter.SectionId);
 
-            return query
-                .AsEnumerable() /*query.ToArray();*/
-                .Select(p => new ProductDto()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Order = p.Order,
-                    Price = p.Price,
-                    ImageUrl = p.ImageUrl,
-                    Brand = p.Brand is null
-                        ? null
-                        : new BrandDto()
-                        {
-                            Id = p.Brand.Id,
-                            Name = p.Brand.Name
-                        },
-                    Section = p.Section is null
-                        ? null
-                        : new SectionDto()
-                        {
-                            Id = p.Section.Id,
-                            Name = p.Section.Name
-                        }
-                });
+            if (Filter?.Ids?.Count > 0)
+                query = query.Where(product => Filter.Ids.Contains(product.Id));
+
+            return query.AsEnumerable().ToDTO();
         }
 
         public ProductDto GetProductById(int id)
@@ -71,28 +47,7 @@ namespace WebStore.Services.Product
            .Include(p => p.Brand)
            .Include(p => p.Section)
            .FirstOrDefault(p => p.Id == id);
-            return product is null ? null : new ProductDto()
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Order = product.Order,
-                Price = product.Price,
-                ImageUrl = product.ImageUrl,
-                Brand = product.Brand is null
-                    ? null
-                    : new BrandDto()
-                    {
-                        Id = product.Brand.Id,
-                        Name = product.Brand.Name
-                    },
-                Section = product.Section is null
-                    ? null
-                    : new SectionDto()
-                    {
-                        Id = product.Section.Id,
-                        Name = product.Section.Name
-                    }
-            };
+            return product.ToDTO();
         } 
     }
 }

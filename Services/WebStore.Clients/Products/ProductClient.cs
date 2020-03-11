@@ -19,10 +19,10 @@ namespace WebStore.Clients.Products
         {
         }
 
-        public IEnumerable<Section> GetSections() => Get<List<Section>>($"{_ServiceAdress}/sections");
+        public IEnumerable<SectionDto> GetSections() => Get<List<SectionDto>>($"{_ServiceAdress}/sections");
         public SectionDto GetSectionById(int id)=> Get<SectionDto>($"{_ServiceAdress}/sections/{id}");
 
-        public IEnumerable<Brand> GetBrands() => Get<List<Brand>>($"{_ServiceAdress}/brands");
+        public IEnumerable<BrandDto> GetBrands() => Get<List<BrandDto>>($"{_ServiceAdress}/brands");
         public BrandDto GetBrandById(int id) => Get<BrandDto>($"{_ServiceAdress}/brands/{id}");
 
         public IEnumerable<ProductDto> GetProducts(ProductFilter Filter = null) =>
