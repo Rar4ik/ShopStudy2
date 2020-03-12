@@ -14,7 +14,7 @@ namespace WebStore.Services.Mapping
             Id = Brand.Id,
             Name = Brand.Name,
             Order = Brand.Order,
-            ProductCount = Brand.Products.Count
+            ProductCount = Brand.Products?.Count ?? 0
         };
 
         public static Brand FromDTO(this BrandDto Brand) => Brand is null ? null : new Brand
